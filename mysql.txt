@@ -1,13 +1,5 @@
 
-create table user_ (screenName varchar(30), password_ varchar(45) , primary key (screenName));
-insert into user_ (screenName,password_) values ('test01','psw01');
-insert into user_ (screenName,password_) values ('test02','psw02');
-
-
-select * from t_bx_apply;
-select * from t_user
 drop table t_bx_apply;
-
 create table t_bx_apply (
 apply_id varchar(40),
 apply_user_id varchar(40) , 
@@ -23,12 +15,10 @@ confir_money double,
 apply_date Date ,
 pass_date Date ,
 pay_date Date ,
-
-
 primary key (apply_id)
 );
-drop table t_user;
-create table t_user(
+drop table t_cfx_user;
+create table t_cfx_user(
 user_id varchar(100),
 user_account varchar(40) , 
 user_password varchar(40),
@@ -36,13 +26,15 @@ user_name varchar(40),
 unit_id varchar(100),
 primary key (user_id)
 );
-delete from  t_user
-insert into  t_user (user_id,user_account,user_password,user_name,unit_id) values ('sys','admin','ctx13107','管理员','0');
-drop table t_unit;
-create table t_unit(
+delete from  t_cfx_user
+insert into  t_cfx_user (user_id,user_account,user_password,user_name,unit_id) values ('sys','admin','ctx13107','管理员','0');
+
+drop table t_cfx_unit;
+create table t_cfx_unit(
 unit_id varchar(100),
 unit_name varchar(40) , 
 unit_short_name varchar(100),
 primary key (unit_id)
 );
-insert into  t_unit (unit_id,unit_name,unit_short_name ) values ('0','信息管理中心','IT' );
+insert into  t_cfx_unit (unit_id,unit_name,unit_short_name ) values ('0','信息管理中心','IT' );
+
