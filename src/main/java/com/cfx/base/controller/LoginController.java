@@ -30,7 +30,7 @@ public class LoginController {
 			
 		}else
 		{
-			throw new Exception("用户名或密码错!");
+			throw new Exception("用户名或密码错!!!!!!!");
 		}
 		
 		
