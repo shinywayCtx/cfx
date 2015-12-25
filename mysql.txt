@@ -1,4 +1,6 @@
 ctx 13107
+shinywayctx
+fcx13107
 drop table t_bx_apply;
 create table t_bx_apply (
 apply_id varchar(40),
@@ -11,8 +13,8 @@ memo varchar(400) ,
 receipt_count int(2), 
 attach_id varchar(40),
 apply_money double,
-confir_money double,
-apply_date Date ,
+confir_mone21312y double,
+apply_date Date ,12
 pass_date Date ,
 pay_date Date ,
 primary key (apply_id)
