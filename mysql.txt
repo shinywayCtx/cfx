@@ -1,5 +1,4 @@
-oa oa oa
-
+ctx 13107
 drop table t_bx_apply;
 create table t_bx_apply (
 apply_id varchar(40),
@@ -28,7 +27,7 @@ unit_id varchar(100),
 primary key (user_id)
 );
 delete from  t_cfx_user
-insert into  t_cfx_user (user_id,user_account,user_password,user_name,unit_id) values ('sys','admin','ctx13107','¹ÜÀíÔ±','0');
+insert into  t_cfx_user (user_id,user_account,user_password,user_name,unit_id) values ('sys','admin','ctx13107','ï¿½ï¿½ï¿½ï¿½Ô±','0');
 
 drop table t_cfx_unit;
 create table t_cfx_unit(
@@ -37,5 +36,5 @@ unit_name varchar(40) ,
 unit_short_name varchar(100),
 primary key (unit_id)
 );
-insert into  t_cfx_unit (unit_id,unit_name,unit_short_name ) values ('0','ĞÅÏ¢¹ÜÀíÖĞĞÄ','IT' );
+insert into  t_cfx_unit (unit_id,unit_name,unit_short_name ) values ('0','ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','IT' );
 
