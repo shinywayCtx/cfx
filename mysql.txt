@@ -1,4 +1,7 @@
 last modyigy
+
+1212
+
 drop table t_bx_apply;
 create table t_bx_apply (
 apply_id varchar(40),
