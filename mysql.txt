@@ -1,8 +1,4 @@
-ctx 13107
-shinywayctx
-fcx13107
-kpms
-o2o
+last modyigy
 drop table t_bx_apply;
 create table t_bx_apply (
 apply_id varchar(40),
