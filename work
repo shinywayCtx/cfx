@@ -1,0 +1,93 @@
+create table LWF_APPINFO
+(
+  wf_id          VARCHAR(36) not null,
+  appid          VARCHAR(36) not null,
+  appname        VARCHAR(1024) not null,
+  approval_type  VARCHAR(40) not null,
+  app_emergency  INT(1) default 1 not null,
+  status         INT,
+  created        DATE,
+  creater        VARCHAR(36),
+  creatername    VARCHAR(40),
+  finished       DATE,
+  finished_cause VARCHAR(1024)
+)
+
+create table LWF_APPROVAL_CATEGORY
+(
+  cat_code  VARCHAR(40) not null,
+  cat_index INT(3) default 99,
+  cat_name  VARCHAR(50) not null,
+  created   DATE not null
+)
+
+create table LWF_APPROVAL_TYPE_CATEGORY
+(
+  type_code VARCHAR(40) not null,
+  cat_code  VARCHAR(40) not null,
+  index_no  int(5) default 999
+)
+
+create table LWF_APPROVAL_TYPES
+(
+  type_code      VARCHAR(40) not null,
+  package_code   VARCHAR(40),
+  type_name      VARCHAR(50) not null,
+  type_state     int(1) not null,
+  approve_url    VARCHAR(100),
+  approve_server VARCHAR(20),
+  type_index     int(4) default 299
+)
+
+create table LWF_DELEGATION
+(
+  dlg_id             VARCHAR(36) not null,
+  from_userid        VARCHAR(36) not null,
+  from_username      VARCHAR(20) not null,
+  to_userid          VARCHAR(36) not null,
+  to_username        VARCHAR(20) not null,
+  approval_type_code VARCHAR(64) not null,
+  valid_from         DATE not null,
+  valid_to           DATE,
+  dlg_status         int(1) not null,
+  created            DATE not null,
+  creatername        VARCHAR(20) not null
+)
+create table LWF_FCFAPERFORMERS
+(
+  jobid        VARCHAR(36) not null,
+  participants VARCHAR(36) not null,
+  approver     VARCHAR(36) not null
+)
+
+create table LWF_JOBS
+(
+  jobid           VARCHAR(36) not null,
+  jobname         VARCHAR(256) not null,
+  wf_id           VARCHAR(36) not null,
+  status          int,
+  activity_id     VARCHAR(36) not null,
+  participants    VARCHAR(36),
+  approveflag     CHAR(1),
+  reject_to_jobid VARCHAR(36),
+  created         DATE,
+  creater         VARCHAR(36),
+  approver        VARCHAR(36),
+  ready_date      DATE,
+  suggest         VARCHAR(2048),
+  endrun          DATE,
+  copy_from_jobid VARCHAR(36)
+)
+
+create table LWF_PACKAGES
+(
+  package_code  VARCHAR(40) not null,
+  package_name  VARCHAR(50) not null,
+  package_state int(1) not null
+)
+
+create table LWF_PREJOBS
+(
+  jobid  VARCHAR(36) not null,
+  pre_id VARCHAR(36) not null
+)
