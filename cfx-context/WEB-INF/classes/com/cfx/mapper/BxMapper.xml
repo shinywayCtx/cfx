@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cfx.fiance.dao.BxDao" >
+  <resultMap id="BaseResultMap" type="com.cfx.fiance.entity.BxInfo" >
+  
+  
+    <id column="apply_id" property="applyId" jdbcType="VARCHAR" />
+    <result column="apply_user_id" property="applyUserId" jdbcType="VARCHAR" />
+    <result column="biz_type" property="bizType" jdbcType="VARCHAR" />
+    <result column="bx_type" property="bxType" jdbcType="VARCHAR" />
+    <result column="bankName" property="bankname" jdbcType="VARCHAR" />
+    <result column="skrPersion" property="skrpersion" jdbcType="VARCHAR" />
+    <result column="skrPhone" property="skrphone" jdbcType="VARCHAR" />
+    <result column="bankCard" property="bankcard" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="apply_unit_id" property="applyUnitId" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="receipt_count" property="receiptCount" jdbcType="INTEGER" />
+    <result column="attach_id" property="attachId" jdbcType="VARCHAR" />
+    <result column="apply_money" property="applyMoney" jdbcType="DOUBLE" />
+    <result column="confir_money" property="confirMoney" jdbcType="DOUBLE" />
+    <result column="apply_date" property="applyDate" jdbcType="DATE" />
+    <result column="pass_date" property="passDate" jdbcType="DATE" />
+    <result column="pay_date" property="payDate" jdbcType="DATE" />
+    <result column="bxContent" property="bx_content" jdbcType="VARCHAR" />
+    
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    apply_id, apply_user_id, biz_type, bx_type, bank_name, skr_Persion, skr_Phone, bank_Card, 
+    status, apply_unit_id, memo, receipt_count, attach_id, apply_money, confir_money, 
+    apply_date, pass_date, pay_date
+  </sql>
+  
+  <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_bx_apply
+    where apply_id = #{id}
+  </select>
+  
+  
+  <delete id="del" parameterType="java.lang.String" >
+    delete from t_bx_apply
+    where apply_id = #{id}
+  </delete>
+  
+  <insert id="add" parameterType="com.cfx.fiance.entity.BxInfo" >
+    insert into t_bx_apply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="applyId != null" >
+        apply_id,
+      </if>
+      <if test="applyUserId != null" >
+        apply_user_id,
+      </if>
+      <if test="bizType != null" >
+        biz_type,
+      </if>
+      <if test="bxType != null" >
+        bx_type,
+      </if>
+      <if test="bankname != null" >
+        bank_name,
+      </if>
+      <if test="skrpersion != null" >
+        skr_persion,
+      </if>
+      <if test="skrphone != null" >
+        skr_phone,
+      </if>
+      <if test="bxContent != null" >
+        bx_content,
+      </if>
+      <if test="bankcard != null" >
+        bank_card,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="applyUnitId != null" >
+        apply_unit_id,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="receiptCount != null" >
+        receipt_count,
+      </if>
+      <if test="attachId != null" >
+        attach_id,
+      </if>
+      <if test="applyMoney != null" >
+        apply_money,
+      </if>
+      <if test="confirMoney != null" >
+        confir_money,
+      </if>
+      <if test="applyDate != null" >
+        apply_date,
+      </if>
+      <if test="passDate != null" >
+        pass_date,
+      </if>
+      <if test="payDate != null" >
+        pay_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="applyId != null" >
+        #{applyId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUserId != null" >
+        #{applyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null" >
+        #{bizType,jdbcType=VARCHAR},
+      </if>
+      <if test="bxType != null" >
+        #{bxType,jdbcType=VARCHAR},
+      </if>
+      <if test="bankname != null" >
+        #{bankname,jdbcType=VARCHAR},
+      </if>
+      <if test="skrpersion != null" >
+        #{skrpersion,jdbcType=VARCHAR},
+      </if>
+      <if test="skrphone != null" >
+        #{skrphone,jdbcType=VARCHAR},
+      </if>
+      
+       <if test="bxContent != null" >
+        #{bxContent,jdbcType=VARCHAR},
+      </if>
+      <if test="bankcard != null" >
+        #{bankcard,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="applyUnitId != null" >
+        #{applyUnitId,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptCount != null" >
+        #{receiptCount,jdbcType=INTEGER},
+      </if>
+      <if test="attachId != null" >
+        #{attachId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyMoney != null" >
+        #{applyMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="confirMoney != null" >
+        #{confirMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="applyDate != null" >
+        #{applyDate,jdbcType=DATE},
+      </if>
+      <if test="passDate != null" >
+        #{passDate,jdbcType=DATE},
+      </if>
+      <if test="payDate != null" >
+        #{payDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  
+  
+  <update id="edit" parameterType="com.cfx.fiance.entity.BxInfo" >
+    update t_bx_apply
+    <set >
+      <if test="applyUserId != null" >
+        apply_user_id = #{applyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null" >
+        biz_type = #{bizType,jdbcType=VARCHAR},
+      </if>
+      <if test="bxType != null" >
+        bx_type = #{bxType,jdbcType=VARCHAR},
+      </if>
+      <if test="bankname != null" >
+        bank_Name = #{bankname,jdbcType=VARCHAR},
+      </if>
+      <if test="skrpersion != null" >
+        skr_persion = #{skrpersion,jdbcType=VARCHAR},
+      </if>
+      <if test="skrphone != null" >
+        skr_phone = #{skrphone,jdbcType=VARCHAR},
+      </if>
+     
+      <if test="bxContent != null" >
+        bx_content = #{bxContent,jdbcType=VARCHAR},
+      </if>
+       <if test="bankcard != null" >
+        bank_card = #{bankcard,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="applyUnitId != null" >
+        apply_unit_id = #{applyUnitId,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptCount != null" >
+        receipt_count = #{receiptCount,jdbcType=INTEGER},
+      </if>
+      <if test="attachId != null" >
+        attach_id = #{attachId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyMoney != null" >
+        apply_money = #{applyMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="confirMoney != null" >
+        confir_money = #{confirMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="applyDate != null" >
+        apply_date = #{applyDate,jdbcType=DATE},
+      </if>
+      <if test="passDate != null" >
+        pass_date = #{passDate,jdbcType=DATE},
+      </if>
+      <if test="payDate != null" >
+        pay_date = #{payDate,jdbcType=DATE},
+      </if>
+    </set>
+    where apply_id = #{applyId,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="getList" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from t_bx_apply where 1 = 1
+		
+		<if test="applyUserId != null and applyUserId!='' ">
+			AND apply_user_id = #{applyUserId,jdbcType=VARCHAR}
+		</if>
+		<if test="bizType !=  null and bizType!=''">
+			AND biz_type = #{bizType,jdbcType=VARCHAR}
+		</if>
+		<if test="bxType !=  null and bxType !=''">
+			AND bx_type  = #{bxType,jdbcType=VARCHAR}
+		</if>
+		<if test="status != null">
+			AND status = #{status,jdbcType=INTEGER}
+		</if>
+		<if test="applyMoney != null">
+			AND apply_money = #{applyMoney,jdbcType=DOUBLE}
+		</if>
+		<if test="bxContent != null">
+			AND bx_content like '%${bxContent}%' 
+		</if>
+		
+	</select>
+   
+</mapper>

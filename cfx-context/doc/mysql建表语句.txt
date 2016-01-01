@@ -1,0 +1,46 @@
+create table if not exists  t_bx_apply  (
+apply_id varchar(40),
+apply_user_id varchar(40), 
+biz_type varchar(40),
+bx_type varchar(40), 
+bank_name varchar(100),
+skr_persion varchar(100),
+skr_phone varchar(100),
+bank_card varchar(100),
+bx_content varchar(100),
+status int(2), 
+apply_unit_id varchar(40),
+memo varchar(400) ,
+receipt_count int(2), 
+attach_id varchar(40),
+apply_money double,
+confir_money double,
+apply_date Date , 
+pass_date Date ,
+pay_date Date ,
+primary key (apply_id)
+);
+
+drop table t_cfx_user;
+create table t_cfx_user(
+user_id varchar(100),
+user_account varchar(40) , 
+user_password varchar(40),
+user_name varchar(40),
+unit_id varchar(100),
+primary key (user_id)
+);
+delete from  t_cfx_user
+insert into  t_cfx_user (user_id,user_account,user_password,user_name,unit_id) values ('sys','admin','ctx13107','����Ա','0');
+select * from t_cfx_user 
+select * from t_cfx_unit 
+    
+select * from t_cfx_user
+drop table t_cfx_unit;
+create table t_cfx_unit(
+unit_id varchar(100),
+unit_name varchar(40) , 
+unit_short_name varchar(100),
+primary key (unit_id)
+);
+insert into  t_cfx_unit (unit_id,unit_name,unit_short_name ) values ('0','��Ϣ��������','IT' );

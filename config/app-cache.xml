@@ -1,0 +1,45 @@
+<ehcache>  
+   <!--  <diskStore path="java.io.tmpdir"/>  -->
+    <defaultCache  
+           maxElementsInMemory="1000"
+           eternal="false"  
+           timeToIdleSeconds="300"  
+           timeToLiveSeconds="300" 
+           overflowToDisk="false"/>  
+           
+ <!-- ???/ ....................-->
+    <cache name="UnitCache"  
+           maxElementsOnDisk="2000"  
+           maxElementsInMemory="2000"  
+           eternal="true"  
+           overflowToDisk="false"  
+           diskPersistent="false"/>
+ 
+   <cache name="UnitListCache"  
+           maxElementsOnDisk="2000"  
+           maxElementsInMemory="2000"
+           eternal="true"  
+           overflowToDisk="false"  
+           diskPersistent="false"/>   
+      
+     <!-- 用户信息  缓存时间 10-day  -->
+     <cache name="UserCache"  
+           maxElementsOnDisk="2000"  
+           maxElementsInMemory="2000" 
+           eternal="false"    
+           timeToIdleSeconds="864000"  
+           timeToLiveSeconds="864000"  
+           overflowToDisk="false"  
+           diskPersistent="false"/>  
+ 
+      <!-- 国家字典表 永久缓存  数量无穷大 -->
+      <cache name="CountryMapCache"  
+           maxElementsOnDisk="0"  
+           maxElementsInMemory="2000"  
+           eternal="true"  
+           overflowToDisk="false"  
+           diskPersistent="false"/>  
+           
+           
+                
+</ehcache>    
