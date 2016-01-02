@@ -35,16 +35,16 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
-			<value>${cfx.jiangcun.jdbc.driver}</value>
+			<value>${cfx.jdbc.driver}</value>
 		</property>
 		<property name="url">
-			<value>${cfx.jiangcun.jdbc.url}</value>
+			<value>${cfx.jdbc.url}</value>
 		</property>
 		<property name="username">
-			<value>${cfx.jiangcun.jdbc.username}</value>
+			<value>${cfx.jdbc.username}</value>
 		</property>
 		<property name="password">
-			<value>${cfx.jiangcun.jdbc.password}</value>
+			<value>${cfx.jdbc.password}</value>
 		</property>
 	</bean>
  

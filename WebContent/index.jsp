@@ -26,7 +26,7 @@
 					<div class="input-group-addon paswdAddon">
 						<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
 					</div>
-					<input type="password" class="form-control pswdInput" name="password" placeholder="密码" value='ctx13107'>
+					<input type="password" class="form-control pswdInput" name="passWord" placeholder="密码" value='ctx1187'>
 				</div>
 			</div>
 			<div class="bottomBtn">

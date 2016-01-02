@@ -7,8 +7,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.shinyway.cms</groupId>
-		<artifactId>cms-parent</artifactId>
+		<groupId>com.pro</groupId>
+		<artifactId>cfx-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
 

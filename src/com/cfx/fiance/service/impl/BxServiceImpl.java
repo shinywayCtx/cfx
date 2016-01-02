@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.UUID;
 
  
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,9 @@ public class BxServiceImpl implements BxService {
 	public void save(BxInfo bx) {
 		try{
 			
-			if(bx.getApplyId().length()>0){
+			 
+			
+			if(StringUtils.isBlank(bx.getApplyId() ) ){
 				String applyId=UUID.randomUUID().toString();
 				bx.setApplyId(applyId);
 				bxDao.add(bx);

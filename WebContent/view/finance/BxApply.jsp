@@ -60,7 +60,7 @@ $(document).ready(function(){
   
   <input name='applyId' value="${bx.applyId}"  type='hidden'>
   <fieldset>
-			<legend style="font-weight:bold;font-size:20px;text-align:center">基本信息</legend>
+	 
 	 
 		<table class="table table-bordered table-condensed ">
 			<tbody>
@@ -153,7 +153,7 @@ $(document).ready(function(){
 		</table>
 		</fieldset>	
 			<fieldset>
-		  	<legend style="font-weight:bold;font-size:20px;text-align:center">收款人信息</legend>
+		 
 		  	<table class="table table-bordered table-condensed ">
 			<tbody>
 				<tr >
@@ -186,7 +186,7 @@ $(document).ready(function(){
 		</table>
 			</fieldset>
 			<fieldset>
-		  	<legend style="font-weight:bold;font-size:20px;text-align:center">审批人信息</legend>
+		   
 		  	<table class="table table-bordered table-condensed ">
 			<tbody>
 				<tr >
